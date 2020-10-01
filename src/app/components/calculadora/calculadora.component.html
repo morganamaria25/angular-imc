@@ -1,0 +1,57 @@
+<div class="container shadow p-3 mb-5 bg-white rounded">
+  <div class="row">
+    <section class="form">
+      <label for="peso">Insira seu Peso</label>
+      <input type="number" id="peso" [(ngModel)]="info.peso" class="shadow-sm p-3 mb-5 bg-white rounded"/>
+
+      <label for="altura">Insira sua Altura</label>
+      <input type="number" id="altura" [(ngModel)]="info.altura" class="shadow-sm p-3 mb-5 bg-white rounded"/>
+
+      <button (click)="calcularIMC()" class="btn shadow p-3 mb-5 bg-white rounded">
+        Calcular IMC
+      </button>
+
+      <span id="result">
+        <p>Seu IMC:</p>
+        <p>{{ valor }}</p>
+      </span>
+    </section>
+  </div>
+
+  <div class="row">
+    <table class="table table-striped">
+      <thead aria-colspan="3">
+        <td scope="col">IMC</td>
+        <td scope="col">Classificação</td>
+        <td scope="col">Obesidade</td>
+      </thead>
+      <tbody>
+        <tr id="abaixo">
+          <td scope="row">Menor que 18.5</td>
+          <td>Magreza</td>
+          <td>0</td>
+        </tr>
+        <tr id="normal">
+          <td scope="row">Entre 18.5 e 24.9</td>
+          <td>Normal</td>
+          <td>0</td>
+        </tr>
+        <tr id="sobre">
+          <td scope="row">Entre 25 e 29.9</td>
+          <td>Sobrepeso</td>
+          <td>I</td>
+        </tr>
+        <tr id="obe2">
+          <td scope="row">Entre 30 e 39.9</td>
+          <td>Obesidade</td>
+          <td>II</td>
+        </tr>
+        <tr id="obe3">
+          <td>Maior que 40</td>
+          <td>Obesidade Grave</td>
+          <td>III</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
